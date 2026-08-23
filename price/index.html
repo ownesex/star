@@ -31,19 +31,19 @@ body.light {
   --button: #ffffff;
 }
 
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  min-height: 100%;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--text);
-  min-height: 100vh;
 
   transition:
-    background 0.25s ease,
-    color 0.25s ease;
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .container {
@@ -56,7 +56,7 @@ body {
 }
 
 
-/* Верхняя область */
+/* Верхняя часть */
 
 .top {
   position: relative;
@@ -64,8 +64,8 @@ body {
   height: 150px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   margin-bottom: 35px;
 }
@@ -80,8 +80,6 @@ body {
   object-fit: contain;
 
   border-radius: 18px;
-
-  display: block;
 }
 
 
@@ -90,8 +88,8 @@ body {
 .theme {
   position: absolute;
 
-  right: 0;
   top: 0;
+  right: 0;
 
   width: 48px;
   height: 48px;
@@ -101,29 +99,26 @@ body {
   border: 1px solid var(--border);
 
   background: var(--button);
-  color: var(--text);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: var(--text);
 
   font-size: 23px;
 
   cursor: pointer;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
     transform 0.2s ease;
 }
 
 .theme:hover {
   transform: scale(1.06);
-}
-
-.theme:active {
-  transform: scale(0.94);
 }
 
 
@@ -136,11 +131,11 @@ body {
 }
 
 .hero h1 {
+  color: var(--text);
+
   font-size: 40px;
 
   margin-bottom: 10px;
-
-  letter-spacing: -1px;
 }
 
 .hero p {
@@ -150,9 +145,11 @@ body {
 }
 
 
-/* Раздел */
+/* Заголовки разделов */
 
 .section-title {
+  color: var(--text);
+
   font-size: 22px;
 
   margin: 35px 0 15px;
@@ -173,8 +170,8 @@ body {
   margin-bottom: 12px;
 
   transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
     transform 0.2s ease;
 }
 
@@ -193,6 +190,8 @@ body {
 }
 
 .name {
+  color: var(--text);
+
   font-size: 18px;
 
   font-weight: 700;
@@ -206,11 +205,11 @@ body {
   font-size: 14px;
 
   line-height: 1.5;
-
-  max-width: 600px;
 }
 
 .price {
+  color: var(--text);
+
   font-size: 20px;
 
   font-weight: 700;
@@ -219,7 +218,7 @@ body {
 }
 
 
-/* Контакты */
+/* Контакт */
 
 .contact {
   margin-top: 35px;
@@ -236,6 +235,8 @@ body {
 }
 
 .contact-title {
+  color: var(--text);
+
   font-size: 17px;
 
   font-weight: 700;
@@ -254,23 +255,17 @@ body {
 .telegram {
   display: inline-block;
 
-  text-decoration: none;
-
   color: #000;
 
   background: #fff;
+
+  text-decoration: none;
 
   padding: 12px 22px;
 
   border-radius: 10px;
 
   font-weight: 700;
-
-  transition: 0.2s ease;
-}
-
-.telegram:hover {
-  transform: translateY(-2px);
 }
 
 
@@ -350,9 +345,6 @@ body {
 
 <div class="container">
 
-
-  <!-- Логотип + солнце -->
-
   <div class="top">
 
     <img
@@ -365,7 +357,6 @@ body {
       class="theme"
       id="themeButton"
       type="button"
-      aria-label="Переключить тему"
     >
       ☀️
     </button>
@@ -373,13 +364,9 @@ body {
   </div>
 
 
-  <!-- Заголовок -->
-
   <div class="hero">
 
-    <h1>
-      Услуги
-    </h1>
+    <h1>Услуги</h1>
 
     <p>
       OSINT • HUMINT • Разведка • Анонимность
@@ -388,19 +375,15 @@ body {
   </div>
 
 
-  <!-- Досье -->
-
   <div class="section-title">
     Досье и аналитика
   </div>
 
 
   <div class="card">
-
     <div class="card-top">
 
       <div>
-
         <div class="name">
           Информационное досье
         </div>
@@ -408,24 +391,18 @@ body {
         <div class="description">
           Сводка открытых данных для первоначальной оценки
         </div>
-
       </div>
 
-      <div class="price">
-        $4
-      </div>
+      <div class="price">$4</div>
 
     </div>
-
   </div>
 
 
   <div class="card">
-
     <div class="card-top">
 
       <div>
-
         <div class="name">
           Оперативное досье
         </div>
@@ -433,24 +410,18 @@ body {
         <div class="description">
           Проверенная информация с ручной обработкой
         </div>
-
       </div>
 
-      <div class="price">
-        $8
-      </div>
+      <div class="price">$8</div>
 
     </div>
-
   </div>
 
 
   <div class="card">
-
     <div class="card-top">
 
       <div>
-
         <div class="name">
           Разведывательное досье
         </div>
@@ -458,19 +429,13 @@ body {
         <div class="description">
           Глубокий анализ + социальная инженерия
         </div>
-
       </div>
 
-      <div class="price">
-        $10
-      </div>
+      <div class="price">$10</div>
 
     </div>
-
   </div>
 
-
-  <!-- Обучение -->
 
   <div class="section-title">
     Обучение и ресурсы
@@ -478,11 +443,9 @@ body {
 
 
   <div class="card">
-
     <div class="card-top">
 
       <div>
-
         <div class="name">
           Менторство OSINT
         </div>
@@ -490,24 +453,18 @@ body {
         <div class="description">
           Индивидуальная программа обучения
         </div>
-
       </div>
 
-      <div class="price">
-        $35
-      </div>
+      <div class="price">$35</div>
 
     </div>
-
   </div>
 
 
   <div class="card">
-
     <div class="card-top">
 
       <div>
-
         <div class="name">
           Архив (1 месяц)
         </div>
@@ -515,24 +472,18 @@ body {
         <div class="description">
           Методички + закрытые материалы
         </div>
-
       </div>
 
-      <div class="price">
-        $2.5
-      </div>
+      <div class="price">$2.5</div>
 
     </div>
-
   </div>
 
 
   <div class="card">
-
     <div class="card-top">
 
       <div>
-
         <div class="name">
           Архив (пожизненно)
         </div>
@@ -540,19 +491,13 @@ body {
         <div class="description">
           Бессрочный доступ ко всему
         </div>
-
       </div>
 
-      <div class="price">
-        $5
-      </div>
+      <div class="price">$5</div>
 
     </div>
-
   </div>
 
-
-  <!-- Специальные услуги -->
 
   <div class="section-title">
     Специальные услуги
@@ -560,11 +505,9 @@ body {
 
 
   <div class="card">
-
     <div class="card-top">
 
       <div>
-
         <div class="name">
           Аудит анонимности
         </div>
@@ -572,24 +515,18 @@ body {
         <div class="description">
           Проверка + рекомендации по OPSEC
         </div>
-
       </div>
 
-      <div class="price">
-        $10
-      </div>
+      <div class="price">$10</div>
 
     </div>
-
   </div>
 
 
   <div class="card">
-
     <div class="card-top">
 
       <div>
-
         <div class="name">
           Разбор кейса
         </div>
@@ -597,19 +534,13 @@ body {
         <div class="description">
           Голосовой разбор вашей работы за 1 час
         </div>
-
       </div>
 
-      <div class="price">
-        $10
-      </div>
+      <div class="price">$10</div>
 
     </div>
-
   </div>
 
-
-  <!-- Контакты -->
 
   <div class="contact">
 
@@ -633,8 +564,6 @@ body {
   </div>
 
 
-  <!-- Назад -->
-
   <a
     class="back"
     href="../"
@@ -647,68 +576,65 @@ body {
     Поднебесный суд 2025
   </div>
 
-
 </div>
 
 
 <script>
+(function () {
 
-/* Переключатель темы */
+  const button =
+    document.getElementById("themeButton");
 
-const themeButton =
-  document.getElementById("themeButton");
+  const savedTheme =
+    localStorage.getItem("theme");
 
+  /* Загружаем сохранённую тему */
 
-/* Сохраняем тему */
+  if (savedTheme === "light") {
 
-const savedTheme =
-  localStorage.getItem("theme");
+    document.body.classList.add("light");
 
-
-if (savedTheme === "light") {
-
-  document.body.classList.add("light");
-
-  themeButton.textContent = "🌙";
-
-} else {
-
-  themeButton.textContent = "☀️";
-
-}
-
-
-/* Переключение */
-
-themeButton.addEventListener("click", function () {
-
-  document.body.classList.toggle("light");
-
-
-  if (
-    document.body.classList.contains("light")
-  ) {
-
-    themeButton.textContent = "🌙";
-
-    localStorage.setItem(
-      "theme",
-      "light"
-    );
+    button.textContent = "🌙";
 
   } else {
 
-    themeButton.textContent = "☀️";
+    document.body.classList.remove("light");
 
-    localStorage.setItem(
-      "theme",
-      "dark"
-    );
+    button.textContent = "☀️";
 
   }
 
-});
 
+  /* Переключение темы */
+
+  button.addEventListener("click", function () {
+
+    const isLight =
+      document.body.classList.toggle("light");
+
+    if (isLight) {
+
+      button.textContent = "🌙";
+
+      localStorage.setItem(
+        "theme",
+        "light"
+      );
+
+    } else {
+
+      button.textContent = "☀️";
+
+      localStorage.setItem(
+        "theme",
+        "dark"
+      );
+
+    }
+
+  });
+
+})();
 </script>
 
 </body>
