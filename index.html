@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Поднебесный суд</title>
 
 <style>
@@ -15,7 +16,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #080808;
-  color: white;
+  color: #fff;
   min-height: 100vh;
 }
 
@@ -25,22 +26,25 @@ body {
   padding: 25px 16px 40px;
 }
 
+/* Верхняя часть */
 .top {
   position: relative;
-  height: 90px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 35px;
 }
 
+/* Логотип */
 .logo {
-  width: 70px;
-  height: 70px;
+  width: 130px;
+  height: 130px;
   object-fit: contain;
-  border-radius: 14px;
+  border-radius: 18px;
 }
 
+/* Кнопка солнца */
 .theme {
   position: absolute;
   right: 0;
@@ -56,6 +60,7 @@ body {
   font-size: 23px;
 }
 
+/* Заголовок */
 .hero {
   text-align: center;
   margin-bottom: 45px;
@@ -64,6 +69,7 @@ body {
 .hero h1 {
   font-size: 42px;
   margin-bottom: 12px;
+  letter-spacing: -1px;
 }
 
 .hero p {
@@ -71,6 +77,7 @@ body {
   font-size: 16px;
 }
 
+/* Карточки */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -86,12 +93,13 @@ body {
   border-radius: 17px;
   padding: 25px;
   min-height: 180px;
-  transition: .2s;
+  transition: 0.2s ease;
 }
 
 .card:hover {
   border-color: #444;
   transform: translateY(-3px);
+  background: #131313;
 }
 
 .icon {
@@ -110,6 +118,7 @@ body {
   line-height: 1.5;
 }
 
+/* Футер */
 .footer {
   text-align: center;
   color: #555;
@@ -123,13 +132,36 @@ body {
   text-decoration: none;
 }
 
+.footer a:hover {
+  color: #fff;
+}
+
+/* Телефон */
 @media (max-width: 650px) {
+
+  .container {
+    padding: 20px 12px 30px;
+  }
+
+  .top {
+    height: 145px;
+  }
+
+  .logo {
+    width: 125px;
+    height: 125px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
 
   .hero h1 {
     font-size: 34px;
+  }
+
+  .card {
+    min-height: 150px;
   }
 }
 </style>
@@ -139,53 +171,135 @@ body {
 
 <div class="container">
 
+  <!-- Логотип и солнце -->
   <div class="top">
 
-    <img src="./logo-0.png" class="logo" alt="Логотип">
+    <img
+      src="./logo-0.png"
+      class="logo"
+      alt="Логотип"
+    >
 
     <div class="theme">☀️</div>
 
   </div>
 
+
+  <!-- Заголовок -->
   <div class="hero">
+
     <h1>Поднебесный суд</h1>
-    <p>OSINT, HUMINT — Добро пожаловать!</p>
+
+    <p>
+      OSINT, HUMINT — Добро пожаловать!
+    </p>
+
   </div>
 
+
+  <!-- Карточки -->
   <div class="grid">
 
-    <a class="card" href="https://t.me/">
+
+    <!-- Telegram канал -->
+    <a
+      class="card"
+      href="https://t.me/+wECzbMUdJcExZjky"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
       <div class="icon">✈️</div>
+
       <h2>Telegram канал</h2>
-      <p>Подписывайтесь на основной канал<br>и следите за продвижениями</p>
+
+      <p>
+        Подписывайтесь на основной канал<br>
+        и следите за продвижениями
+      </p>
+
     </a>
 
-    <a class="card" href="https://t.me/">
+
+    <!-- Telegram чат -->
+    <a
+      class="card"
+      href="https://t.me/+BvT6Zw253dFiYTI6"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
       <div class="icon">💬</div>
+
       <h2>Telegram чат</h2>
-      <p>Переходите и вступайте в обсуждение<br>всех событий в сфере OSINT</p>
+
+      <p>
+        Переходите и вступайте в обсуждение<br>
+        всех событий в сфере OSINT
+      </p>
+
     </a>
 
-    <a class="card" href="./price/">
+
+    <!-- Price -->
+    <a
+      class="card"
+      href="./price/"
+    >
+
       <div class="icon">₽</div>
+
       <h2>Price услуги</h2>
-      <p>Перед заказом всегда<br>уточняйте данные</p>
+
+      <p>
+        Перед заказом всегда<br>
+        уточняйте данные
+      </p>
+
     </a>
 
-    <a class="card" href="#">
+
+    <!-- Отзывы -->
+    <a
+      class="card"
+      href="https://t.me/+JhKXoR_oyyk5ZWRi"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
       <div class="icon">★</div>
+
       <h2>Отзывы</h2>
-      <p>Мы предлагаем множество<br>гарантий в процессе сделки</p>
+
+      <p>
+        Мы предлагаем множество<br>
+        гарантий в процессе сделки
+      </p>
+
     </a>
 
   </div>
 
+
+  <!-- Футер -->
   <div class="footer">
+
     Поднебесный суд 2025 |
-    <a href="#">Политика конфиденциальности</a> |
-    <a href="#">Пользовательское соглашение</a>
+
+    <a href="#">
+      Политика конфиденциальности
+    </a>
+
+    |
+
+    <a href="#">
+      Пользовательское соглашение
+    </a>
+
     <br>
+
     Все права защищены
+
   </div>
 
 </div>
