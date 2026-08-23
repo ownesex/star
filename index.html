@@ -13,11 +13,30 @@
   padding: 0;
 }
 
+:root {
+  --bg: #080808;
+  --text: #ffffff;
+  --secondary: #888888;
+  --card: #111111;
+  --border: #242424;
+  --button: #151515;
+}
+
+body.light {
+  --bg: #f5f5f5;
+  --text: #111111;
+  --secondary: #666666;
+  --card: #ffffff;
+  --border: #dddddd;
+  --button: #ffffff;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #080808;
-  color: #fff;
+  background: var(--bg);
+  color: var(--text);
   min-height: 100vh;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .container {
@@ -26,7 +45,7 @@ body {
   padding: 25px 16px 40px;
 }
 
-/* Верхняя часть */
+/* Верх */
 .top {
   position: relative;
   height: 150px;
@@ -44,20 +63,31 @@ body {
   border-radius: 18px;
 }
 
-/* Кнопка солнца */
+/* Переключатель темы */
 .theme {
   position: absolute;
   right: 0;
   top: 0;
+
   width: 48px;
   height: 48px;
+
   border-radius: 12px;
-  background: #151515;
-  border: 1px solid #292929;
+  border: 1px solid var(--border);
+  background: var(--button);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 23px;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.theme:hover {
+  transform: scale(1.05);
 }
 
 /* Заголовок */
@@ -73,7 +103,7 @@ body {
 }
 
 .hero p {
-  color: #888;
+  color: var(--secondary);
   font-size: 16px;
 }
 
@@ -87,19 +117,21 @@ body {
 .card {
   display: block;
   text-decoration: none;
-  color: white;
-  background: #111;
-  border: 1px solid #242424;
+
+  color: var(--text);
+  background: var(--card);
+
+  border: 1px solid var(--border);
   border-radius: 17px;
+
   padding: 25px;
   min-height: 180px;
+
   transition: 0.2s ease;
 }
 
 .card:hover {
-  border-color: #444;
   transform: translateY(-3px);
-  background: #131313;
 }
 
 .icon {
@@ -113,7 +145,7 @@ body {
 }
 
 .card p {
-  color: #888;
+  color: var(--secondary);
   font-size: 14px;
   line-height: 1.5;
 }
@@ -121,19 +153,21 @@ body {
 /* Футер */
 .footer {
   text-align: center;
-  color: #555;
+  color: var(--secondary);
+
   font-size: 12px;
   line-height: 1.7;
+
   margin-top: 45px;
 }
 
 .footer a {
-  color: #777;
+  color: var(--secondary);
   text-decoration: none;
 }
 
 .footer a:hover {
-  color: #fff;
+  color: var(--text);
 }
 
 /* Телефон */
@@ -171,7 +205,7 @@ body {
 
 <div class="container">
 
-  <!-- Логотип и солнце -->
+  <!-- Логотип и переключатель -->
   <div class="top">
 
     <img
@@ -180,7 +214,13 @@ body {
       alt="Логотип"
     >
 
-    <div class="theme">☀️</div>
+    <button
+      class="theme"
+      id="themeButton"
+      aria-label="Переключить тему"
+    >
+      ☀️
+    </button>
 
   </div>
 
@@ -200,15 +240,12 @@ body {
   <!-- Карточки -->
   <div class="grid">
 
-
-    <!-- Telegram канал -->
     <a
       class="card"
       href="https://t.me/+wECzbMUdJcExZjky"
       target="_blank"
       rel="noopener noreferrer"
     >
-
       <div class="icon">✈️</div>
 
       <h2>Telegram канал</h2>
@@ -217,18 +254,15 @@ body {
         Подписывайтесь на основной канал<br>
         и следите за продвижениями
       </p>
-
     </a>
 
 
-    <!-- Telegram чат -->
     <a
       class="card"
       href="https://t.me/+BvT6Zw253dFiYTI6"
       target="_blank"
       rel="noopener noreferrer"
     >
-
       <div class="icon">💬</div>
 
       <h2>Telegram чат</h2>
@@ -237,16 +271,13 @@ body {
         Переходите и вступайте в обсуждение<br>
         всех событий в сфере OSINT
       </p>
-
     </a>
 
 
-    <!-- Price -->
     <a
       class="card"
       href="./price/"
     >
-
       <div class="icon">₽</div>
 
       <h2>Price услуги</h2>
@@ -255,18 +286,15 @@ body {
         Перед заказом всегда<br>
         уточняйте данные
       </p>
-
     </a>
 
 
-    <!-- Отзывы -->
     <a
       class="card"
       href="https://t.me/+JhKXoR_oyyk5ZWRi"
       target="_blank"
       rel="noopener noreferrer"
     >
-
       <div class="icon">★</div>
 
       <h2>Отзывы</h2>
@@ -275,7 +303,6 @@ body {
         Мы предлагаем множество<br>
         гарантий в процессе сделки
       </p>
-
     </a>
 
   </div>
@@ -303,6 +330,38 @@ body {
   </div>
 
 </div>
+
+
+<script>
+const themeButton = document.getElementById("themeButton");
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+  document.body.classList.add("light");
+  themeButton.textContent = "🌙";
+}
+
+themeButton.addEventListener("click", function () {
+
+  document.body.classList.toggle("light");
+
+  if (document.body.classList.contains("light")) {
+
+    themeButton.textContent = "🌙";
+
+    localStorage.setItem("theme", "light");
+
+  } else {
+
+    themeButton.textContent = "☀️";
+
+    localStorage.setItem("theme", "dark");
+
+  }
+
+});
+</script>
 
 </body>
 </html>
