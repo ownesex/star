@@ -31,41 +31,58 @@ body.light {
   --button: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .container {
+  width: 100%;
   max-width: 900px;
-  margin: auto;
-  padding: 25px 16px 40px;
+  margin: 0 auto;
+  padding: 25px 16px 50px;
 }
 
-/* Верх */
+/* Верхняя область */
+
 .top {
   position: relative;
   height: 150px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   margin-bottom: 35px;
 }
 
-/* Логотип */
+/* Большой логотип */
+
 .logo {
   width: 130px;
   height: 130px;
+
   object-fit: contain;
+
   border-radius: 18px;
+
+  display: block;
 }
 
-/* Переключатель темы */
+/* Кнопка темы */
+
 .theme {
   position: absolute;
+
   right: 0;
   top: 0;
 
@@ -73,24 +90,37 @@ body {
   height: 48px;
 
   border-radius: 12px;
+
   border: 1px solid var(--border);
+
   background: var(--button);
+  color: var(--text);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   font-size: 23px;
+
   cursor: pointer;
 
-  transition: 0.2s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
 }
 
 .theme:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
+}
+
+.theme:active {
+  transform: scale(0.94);
 }
 
 /* Заголовок */
+
 .hero {
   text-align: center;
   margin-bottom: 45px;
@@ -98,64 +128,89 @@ body {
 
 .hero h1 {
   font-size: 42px;
+  line-height: 1.15;
+
   margin-bottom: 12px;
+
   letter-spacing: -1px;
 }
 
 .hero p {
   color: var(--secondary);
+
   font-size: 16px;
 }
 
 /* Карточки */
+
 .grid {
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
+
   gap: 14px;
 }
 
 .card {
   display: block;
+
   text-decoration: none;
 
   color: var(--text);
+
   background: var(--card);
 
   border: 1px solid var(--border);
+
   border-radius: 17px;
 
   padding: 25px;
+
   min-height: 180px;
 
-  transition: 0.2s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-3px);
 }
 
+.card:active {
+  transform: translateY(0);
+}
+
 .icon {
   font-size: 28px;
+
   margin-bottom: 25px;
 }
 
 .card h2 {
   font-size: 19px;
+
   margin-bottom: 9px;
 }
 
 .card p {
   color: var(--secondary);
+
   font-size: 14px;
+
   line-height: 1.5;
 }
 
 /* Футер */
+
 .footer {
   text-align: center;
+
   color: var(--secondary);
 
   font-size: 12px;
+
   line-height: 1.7;
 
   margin-top: 45px;
@@ -163,6 +218,7 @@ body {
 
 .footer a {
   color: var(--secondary);
+
   text-decoration: none;
 }
 
@@ -171,10 +227,11 @@ body {
 }
 
 /* Телефон */
+
 @media (max-width: 650px) {
 
   .container {
-    padding: 20px 12px 30px;
+    padding: 20px 12px 40px;
   }
 
   .top {
@@ -184,6 +241,11 @@ body {
   .logo {
     width: 125px;
     height: 125px;
+  }
+
+  .theme {
+    right: 0;
+    top: 0;
   }
 
   .grid {
@@ -205,7 +267,7 @@ body {
 
 <div class="container">
 
-  <!-- Логотип и переключатель -->
+  <!-- Логотип и переключатель темы -->
   <div class="top">
 
     <img
@@ -217,6 +279,7 @@ body {
     <button
       class="theme"
       id="themeButton"
+      type="button"
       aria-label="Переключить тему"
     >
       ☀️
@@ -226,9 +289,12 @@ body {
 
 
   <!-- Заголовок -->
+
   <div class="hero">
 
-    <h1>Поднебесный суд</h1>
+    <h1>
+      Поднебесный суд
+    </h1>
 
     <p>
       OSINT, HUMINT — Добро пожаловать!
@@ -238,7 +304,11 @@ body {
 
 
   <!-- Карточки -->
+
   <div class="grid">
+
+
+    <!-- Telegram канал -->
 
     <a
       class="card"
@@ -246,16 +316,24 @@ body {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div class="icon">✈️</div>
 
-      <h2>Telegram канал</h2>
+      <div class="icon">
+        ✈️
+      </div>
+
+      <h2>
+        Telegram канал
+      </h2>
 
       <p>
         Подписывайтесь на основной канал<br>
         и следите за продвижениями
       </p>
+
     </a>
 
+
+    <!-- Telegram чат -->
 
     <a
       class="card"
@@ -263,31 +341,47 @@ body {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div class="icon">💬</div>
 
-      <h2>Telegram чат</h2>
+      <div class="icon">
+        💬
+      </div>
+
+      <h2>
+        Telegram чат
+      </h2>
 
       <p>
         Переходите и вступайте в обсуждение<br>
         всех событий в сфере OSINT
       </p>
+
     </a>
 
+
+    <!-- Price -->
 
     <a
       class="card"
       href="./price/"
     >
-      <div class="icon">₽</div>
 
-      <h2>Price услуги</h2>
+      <div class="icon">
+        ₽
+      </div>
+
+      <h2>
+        Price услуги
+      </h2>
 
       <p>
         Перед заказом всегда<br>
         уточняйте данные
       </p>
+
     </a>
 
+
+    <!-- Отзывы -->
 
     <a
       class="card"
@@ -295,20 +389,27 @@ body {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div class="icon">★</div>
 
-      <h2>Отзывы</h2>
+      <div class="icon">
+        ★
+      </div>
+
+      <h2>
+        Отзывы
+      </h2>
 
       <p>
         Мы предлагаем множество<br>
         гарантий в процессе сделки
       </p>
+
     </a>
 
   </div>
 
 
   <!-- Футер -->
+
   <div class="footer">
 
     Поднебесный суд 2025 |
@@ -333,34 +434,63 @@ body {
 
 
 <script>
-const themeButton = document.getElementById("themeButton");
 
-const savedTheme = localStorage.getItem("theme");
+/* Переключение темы */
+
+const themeButton =
+  document.getElementById("themeButton");
+
+
+/* Загружаем сохранённую тему */
+
+const savedTheme =
+  localStorage.getItem("theme");
+
 
 if (savedTheme === "light") {
+
   document.body.classList.add("light");
+
   themeButton.textContent = "🌙";
+
+} else {
+
+  themeButton.textContent = "☀️";
+
 }
+
+
+/* Нажатие на кнопку */
 
 themeButton.addEventListener("click", function () {
 
   document.body.classList.toggle("light");
 
-  if (document.body.classList.contains("light")) {
+
+  if (
+    document.body.classList.contains("light")
+  ) {
 
     themeButton.textContent = "🌙";
 
-    localStorage.setItem("theme", "light");
+    localStorage.setItem(
+      "theme",
+      "light"
+    );
 
   } else {
 
     themeButton.textContent = "☀️";
 
-    localStorage.setItem("theme", "dark");
+    localStorage.setItem(
+      "theme",
+      "dark"
+    );
 
   }
 
 });
+
 </script>
 
 </body>
