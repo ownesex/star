@@ -1,214 +1,194 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Поднебесный суд</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Поднебесный суд</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #080808;
-      color: #fff;
-      min-height: 100vh;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080808;
+  color: white;
+  min-height: 100vh;
+}
 
-    .container {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 25px 16px 35px;
-    }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px 16px 40px;
+}
 
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 45px;
-    }
+.top {
+  position: relative;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+}
 
-    .logo {
-      width: 52px;
-      height: 52px;
-      object-fit: contain;
-      border-radius: 12px;
-    }
+.logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 14px;
+}
 
-    .theme {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: #151515;
-      border: 1px solid #292929;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 23px;
-    }
+.theme {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #151515;
+  border: 1px solid #292929;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+}
 
-    .hero {
-      text-align: center;
-      margin-bottom: 45px;
-    }
+.hero {
+  text-align: center;
+  margin-bottom: 45px;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
-    }
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
 
-    .hero p {
-      color: #888;
-      font-size: 16px;
-    }
+.hero p {
+  color: #888;
+  font-size: 16px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
 
-    .card {
-      display: block;
-      text-decoration: none;
-      color: #fff;
-      background: #111;
-      border: 1px solid #242424;
-      border-radius: 17px;
-      padding: 25px;
-      min-height: 180px;
-      transition: 0.2s ease;
-    }
+.card {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: #111;
+  border: 1px solid #242424;
+  border-radius: 17px;
+  padding: 25px;
+  min-height: 180px;
+  transition: .2s;
+}
 
-    .card:hover {
-      border-color: #444;
-      transform: translateY(-3px);
-      background: #131313;
-    }
+.card:hover {
+  border-color: #444;
+  transform: translateY(-3px);
+}
 
-    .icon {
-      font-size: 28px;
-      margin-bottom: 25px;
-    }
+.icon {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
 
-    .card h2 {
-      font-size: 19px;
-      margin-bottom: 9px;
-    }
+.card h2 {
+  font-size: 19px;
+  margin-bottom: 9px;
+}
 
-    .card p {
-      color: #888;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+.card p {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-    .footer {
-      text-align: center;
-      color: #555;
-      font-size: 12px;
-      line-height: 1.7;
-      margin-top: 45px;
-    }
+.footer {
+  text-align: center;
+  color: #555;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 45px;
+}
 
-    .footer a {
-      color: #777;
-      text-decoration: none;
-    }
+.footer a {
+  color: #777;
+  text-decoration: none;
+}
 
-    .footer a:hover {
-      color: #fff;
-    }
+@media (max-width: 650px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 
-    @media (max-width: 650px) {
-      .container {
-        padding: 20px 12px 30px;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        min-height: 150px;
-      }
-    }
-  </style>
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div class="top">
-      <img src="logo-0.png" alt="Логотип" class="logo">
+  <div class="top">
 
-      <div class="theme">☀️</div>
-    </div>
+    <img src="./logo-0.png" class="logo" alt="Логотип">
 
-    <div class="hero">
-      <h1>Поднебесный суд</h1>
-      <p>OSINT, HUMINT — Добро пожаловать!</p>
-    </div>
-
-    <div class="grid">
-
-      <a class="card" href="https://t.me/">
-        <div class="icon">✈️</div>
-        <h2>Telegram канал</h2>
-        <p>
-          Подписывайтесь на основной канал<br>
-          и следите за продвижениями
-        </p>
-      </a>
-
-      <a class="card" href="https://t.me/">
-        <div class="icon">💬</div>
-        <h2>Telegram чат</h2>
-        <p>
-          Переходите и вступайте в обсуждение<br>
-          всех событий в сфере OSINT
-        </p>
-      </a>
-
-      <a class="card" href="price/">
-        <div class="icon">₽</div>
-        <h2>Price услуги</h2>
-        <p>
-          Перед заказом всегда<br>
-          уточняйте данные
-        </p>
-      </a>
-
-      <a class="card" href="#">
-        <div class="icon">★</div>
-        <h2>Отзывы</h2>
-        <p>
-          Мы предлагаем множество<br>
-          гарантий в процессе сделки
-        </p>
-      </a>
-
-    </div>
-
-    <div class="footer">
-      Поднебесный суд 2025 |
-      <a href="#">Политика конфиденциальности</a> |
-      <a href="#">Пользовательское соглашение</a>
-      <br>
-      Все права защищены
-    </div>
+    <div class="theme">☀️</div>
 
   </div>
+
+  <div class="hero">
+    <h1>Поднебесный суд</h1>
+    <p>OSINT, HUMINT — Добро пожаловать!</p>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="https://t.me/">
+      <div class="icon">✈️</div>
+      <h2>Telegram канал</h2>
+      <p>Подписывайтесь на основной канал<br>и следите за продвижениями</p>
+    </a>
+
+    <a class="card" href="https://t.me/">
+      <div class="icon">💬</div>
+      <h2>Telegram чат</h2>
+      <p>Переходите и вступайте в обсуждение<br>всех событий в сфере OSINT</p>
+    </a>
+
+    <a class="card" href="./price/">
+      <div class="icon">₽</div>
+      <h2>Price услуги</h2>
+      <p>Перед заказом всегда<br>уточняйте данные</p>
+    </a>
+
+    <a class="card" href="#">
+      <div class="icon">★</div>
+      <h2>Отзывы</h2>
+      <p>Мы предлагаем множество<br>гарантий в процессе сделки</p>
+    </a>
+
+  </div>
+
+  <div class="footer">
+    Поднебесный суд 2025 |
+    <a href="#">Политика конфиденциальности</a> |
+    <a href="#">Пользовательское соглашение</a>
+    <br>
+    Все права защищены
+  </div>
+
+</div>
 
 </body>
 </html>
